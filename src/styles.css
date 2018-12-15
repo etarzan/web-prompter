@@ -11,9 +11,11 @@ body {
 }
 
 
-.container-fluid{
+.container-fluid {
   padding: 0%;
 }
+
+
 .docs-app-background {
   background: #303030;
   color: #fff;
