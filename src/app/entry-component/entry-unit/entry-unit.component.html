@@ -1,3 +1,14 @@
-<div class="entry-unit mat-elevation-z1">
-  entry-unit works!
+<div class="entry-unit mat-elevation-z1 no-padding container fill">
+  <mat-grid-list cols="1" [rowHeight]="'100px'" [gutterSize]="'1px'">
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <mat-grid-tile-header>
+        Header text
+      </mat-grid-tile-header>
+      <div class="tile-body">tile body</div>
+      <mat-grid-tile-footer>
+        <h3 mat-line>Heading</h3>
+        <span mat-line>Sub heading</span>
+      </mat-grid-tile-footer>
+    </mat-grid-tile>
+  </mat-grid-list>
 </div>
