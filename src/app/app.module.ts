@@ -11,6 +11,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatGridListModule, MatListModule } from '@angular/material';
 import { ControlUnitComponent } from './entry-component/control-unit/control-unit.component';
 import { EntryUnitComponent } from './entry-component/entry-unit/entry-unit.component';
+import { ControlBarComponent } from './control-bar/control-bar.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { EntryUnitComponent } from './entry-component/entry-unit/entry-unit.comp
     EntryComponent,
     AppNavbarComponent,
     ControlUnitComponent,
-    EntryUnitComponent
+    EntryUnitComponent,
+    ControlBarComponent
   ],
   imports: [
     BrowserModule,
