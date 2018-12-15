@@ -1,6 +1,9 @@
-.header {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    padding: 8px 16px;
+.center-text {
+  margin: auto;
+}
+
+.banner{
+  font-family: 'Sedgwick Ave', cursive;
+  text-shadow: #333 3px 2px;
+  font-size: 21pt
 }
