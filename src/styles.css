@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "~@angular/material/prebuilt-themes/purple-green.css";
+@import "~bootstrap/dist/css/bootstrap-grid.css";
+
+
+body {
+  font-family: Roboto, "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  margin: 0;
+  height: 100%;
+}
+
+
+.container-fluid{
+  padding: 0%;
+}
+.docs-app-background {
+  background: #303030;
+  color: #fff;
+}
