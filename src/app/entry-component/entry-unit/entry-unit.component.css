@@ -1,9 +1,36 @@
 .entry-unit {
-  padding: 15px;
   background: rgba(164, 11, 235, 0.158);
+  height: 100%;
+}
+
+.entry-header {
+  height: 10%;
+  font-size: 9pt;
+  font-weight: 300;
+}
+
+.entry-body {
+  height: 80%;
+  background-color: rgba(164, 11, 235, 0.100);
+}
+
+.p-5{
+  padding: 5px;
+}
+
+.sub-note {
+  font-size: 8pt;
+  font-weight: 300;
+}
+
+.entry-footer {
+  height: 10%;
 }
 
 .no-padding {
   padding: 0px;
 }
 
+.no-margin {
+  margin: 0px;
+}
