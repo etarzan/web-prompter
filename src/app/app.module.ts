@@ -8,10 +8,14 @@ import { AppComponent } from './app.component';
 import { EntryComponent } from './entry-component/entry-component.component';
 import { AppNavbarComponent } from './app-navbar/app-navbar.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatGridListModule, MatListModule } from '@angular/material';
+import {
+  MatToolbarModule, MatButtonModule,
+  MatSidenavModule, MatIconModule, MatGridListModule, MatListModule, MatCardModule
+} from '@angular/material';
 import { ControlUnitComponent } from './entry-component/control-unit/control-unit.component';
 import { EntryUnitComponent } from './entry-component/entry-unit/entry-unit.component';
 import { ControlBarComponent } from './control-bar/control-bar.component';
+import { PrompterService } from './prompter.service';
 
 @NgModule({
   declarations: [
@@ -32,11 +36,12 @@ import { ControlBarComponent } from './control-bar/control-bar.component';
     MatSidenavModule,
     MatIconModule,
     MatGridListModule,
-    MatListModule
+    MatListModule,
+    MatCardModule
 
 
   ],
-  providers: [],
+  providers: [PrompterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
