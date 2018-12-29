@@ -9,8 +9,13 @@ import { EntryComponent } from './entry-component/entry-component.component';
 import { AppNavbarComponent } from './app-navbar/app-navbar.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import {
-  MatToolbarModule, MatButtonModule,
-  MatSidenavModule, MatIconModule, MatGridListModule, MatListModule, MatCardModule
+  MatToolbarModule,
+  MatButtonModule,
+  MatSidenavModule,
+  MatIconModule,
+  MatGridListModule,
+  MatListModule,
+  MatCardModule
 } from '@angular/material';
 import { ControlUnitComponent } from './entry-component/control-unit/control-unit.component';
 import { EntryUnitComponent } from './entry-component/entry-unit/entry-unit.component';
