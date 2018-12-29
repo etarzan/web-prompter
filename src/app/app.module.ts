@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { EntryComponent } from './entry-component/entry-component.component';
 import { AppNavbarComponent } from './app-navbar/app-navbar.component';
 import { LayoutModule } from '@angular/cdk/layout';
+import { FormsModule } from '@angular/forms';
 import {
   MatToolbarModule,
   MatButtonModule,
@@ -42,7 +43,8 @@ import { PrompterService } from './prompter.service';
     MatIconModule,
     MatGridListModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    FormsModule
 
 
   ],

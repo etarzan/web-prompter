@@ -5,9 +5,10 @@
 
 .entry-body {
   padding: 2px;
-  max-height: 90%;
-  min-height: 340px;
+  min-height: 320px;
+  max-height: 320px;
   background-color: rgba(164, 11, 235, 0.100);
+  overflow-y: auto;
 }
 
 .entry-body::-webkit-scrollbar {
@@ -46,6 +47,7 @@
   display: inline-block;
   max-width: 640px;
   min-width: 80%;
+  word-wrap: break-word;
 }
 
 .right-btn {

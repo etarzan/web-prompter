@@ -9,11 +9,22 @@ import { PrompterService } from 'src/app/prompter.service';
 export class EntryUnitComponent implements OnInit {
 
   lines = [];
+  lineinput = '';
   constructor(private readonly prompterService: PrompterService) { }
   ngOnInit() {
     this.prompterService.getLines().subscribe(data => {
       this.lines = data;
     });
+  }
+
+  addInputLineOnEnter(event) {
+    if (event.keyCode === 13) {
+      this.prompterService.addLine(this.lineinput);
+    }
+
+  }
+  addInputLine() {
+    this.prompterService.addLine(this.lineinput);
   }
 
 }

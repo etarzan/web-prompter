@@ -6,10 +6,16 @@ import { Observable, of } from 'rxjs';
 })
 export class PrompterService {
 
-  inputLines: string[] = ['First line', 'Second line'];
+  inputLines: string[] = [];
   constructor() { }
 
   getLines(): Observable<string[]> {
     return of(this.inputLines);
+  }
+
+  addLine(line: string) {
+    if (line.trim().length > 0) {
+      this.inputLines.push(line);
+    }
   }
 }
