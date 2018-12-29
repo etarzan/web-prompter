@@ -20,11 +20,13 @@ export class EntryUnitComponent implements OnInit {
   addInputLineOnEnter(event) {
     if (event.keyCode === 13) {
       this.prompterService.addLine(this.lineinput);
+      this.lineinput = '';
     }
 
   }
   addInputLine() {
     this.prompterService.addLine(this.lineinput);
+    this.lineinput = '';
   }
 
 }

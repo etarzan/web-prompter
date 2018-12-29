@@ -1,5 +1,7 @@
 <div class="entry-unit mat-elevation-z1  fill pad-5 col-md-12">
   <div class="entry-body col-md-12">
+    <span [style.display]="lines.length < 1 ?  'block' : 'none'">No Text to display. Start typing into the input box
+      below</span>
     <mat-card *ngFor="let line of lines" class="bg-light pad-5">
       <div class="card-content-text">{{line}}</div>
     </mat-card>
