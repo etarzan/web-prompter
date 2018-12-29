@@ -7,11 +7,11 @@ import { Component, ViewChild, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
 
+  title = 'web-prompter';
 
   ngOnInit(): void {
 
   }
-  title = 'screen-reader';
 
 
 

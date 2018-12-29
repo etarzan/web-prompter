@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "screen-reader": {
+    "wweb-prompter": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/screen-reader",
+            "outputPath": "dist/web-prompter",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -57,18 +57,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "screen-reader:build"
+            "browserTarget": "web-prompter:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "screen-reader:build:production"
+              "browserTarget": "web-prompter:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "screen-reader:build"
+            "browserTarget": "web-prompter:build"
           }
         },
         "test": {
@@ -102,7 +102,7 @@
         }
       }
     },
-    "screen-reader-e2e": {
+    "web-prompter-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -111,11 +111,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "screen-reader:serve"
+            "devServerTarget": "web-prompter:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "screen-reader:serve:production"
+              "devServerTarget": "web-prompter:serve:production"
             }
           }
         },
@@ -131,5 +131,5 @@
       }
     }
   },
-  "defaultProject": "screen-reader"
+  "defaultProject": "web-prompter"
 }
