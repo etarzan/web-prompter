@@ -12,24 +12,24 @@
 
 .entry-body {
   padding: 2px;
-  max-height: 80%;
-  min-height: 320px;
+  max-height: 90%;
+  min-height: 340px;
   background-color: rgba(164, 11, 235, 0.100);
 }
 
-.bg-light{
+.bg-light {
   background-color: rgba(119, 93, 122, 0.158);
   color: rgba(252, 250, 244, 0.822);
   text-shadow: 1px 2px rgba(41, 30, 46, 0.432);
 }
 
-.card-content-text{
+.card-content-text {
   display: inline-block;
-  max-width:640px;
+  max-width: 640px;
   min-width: 80%;
 }
 
-.right-btn{
+.right-btn {
   max-width: 45px;
   min-width: 5%;
   display: inline-block;
@@ -38,7 +38,8 @@
 .p-5 {
   padding: 5px;
 }
-.mat-18{
+
+.mat-18 {
   margin-right: -50px;
 }
 
@@ -58,4 +59,38 @@
 
 .no-margin {
   margin: 0px;
+}
+
+.input-area {
+  margin: 6px 0px 0px 0px;
+  background-color: rgba(255, 255, 255, 0.730);
+  border-radius: 20px 20px;
+  max-height: 100%;
+  min-height: 40px;
+}
+
+.input-text {
+  border-left: 0px;
+  border-right: 0px;
+  border-top: 0px;
+  border-bottom: 2px;
+  border-bottom-color: rgb(70, 38, 71);
+  border-bottom-style: solid;
+  margin: 1px 0px 0px 20px;
+  max-height: 28px;
+  min-height: 75%;
+  max-width: 80%;
+  background-color: initial;
+}
+
+.input-ent-btn {
+  color: rgba(40, 2, 48, 0.726);
+  font-size: 28px;
+  font-weight: bolder;
+  cursor: pointer;
+  margin: 0px 0px 0px 5px;
+  padding-top: 5px;
+  max-height: 28px;
+  min-height: 75%;
+  max-width: 30px;
 }
