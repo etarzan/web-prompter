@@ -18,4 +18,12 @@ export class PrompterService {
       this.inputLines.push(line);
     }
   }
+
+  editLine(lineinput, editIndex) {
+    this.inputLines.splice(editIndex, 1, lineinput);
+  }
+
+  deleteElement(index) {
+    this.inputLines.splice(index - 1, 1);
+  }
 }
