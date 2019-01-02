@@ -10,8 +10,9 @@
   </div>
   <div class="entry-footer col-md-12 pad-5">
     <div class="input-area mat-elevation-z5 pad-5 row">
-      <input #input_text placeholder="Type lines here. Press Enter for new line." [(ngModel)]="lineinput" class="input-text col-md-10 no-padding"
-        (keypress)="addInputLineOnEnter($event)">
+      <input #input_text placeholder="Type lines here. Press Enter for new line." [(ngModel)]="lineinput"
+            class="input-text mat-elevation-z0 col-md-10 no-padding"
+            (keypress)="addInputLineOnEnter($event)">
       <mat-icon class="col-md-1 input-ent-btn no-padding col-md-1" (click)="addInputLine($event)">
         subdirectory_arrow_left
       </mat-icon>

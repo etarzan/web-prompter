@@ -10,6 +10,7 @@ Initial goals are:
 - Upload a text file and set reading controls instead of typing on the tool
 - Deploy in a publicly available URL 
 - Provide download as an electron app
+- Print content as pdf
 
 
 

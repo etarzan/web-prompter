@@ -1,127 +1,130 @@
 .entry-unit {
-  background: rgba(164, 11, 235, 0.158);
-  max-height: 100%;
+    background: rgba(164, 11, 235, 0.158);
+    max-height: 100%;
 }
 
 .entry-body {
-  padding: 2px;
-  min-height: 320px;
-  max-height: 320px;
-  background-color: rgba(164, 11, 235, 0.100);
-  overflow-y: auto;
+    padding: 2px;
+    min-height: 320px;
+    max-height: 320px;
+    background-color: rgba(164, 11, 235, 0.100);
+    overflow-y: auto;
 }
 
 .entry-body::-webkit-scrollbar {
-  width: 10px;
-  background-color: rgba(119, 93, 122, 0.158);
+    width: 10px;
+    background-color: rgba(119, 93, 122, 0.158);
 }
 
 .entry-body::-webkit-scrollbar-track {
-  border-radius: 15px;
-  background-color: rgba(119, 93, 122, 0);
-  border: 1px solid rgba(90, 4, 77, 0.507);
+    border-radius: 15px;
+    background-color: rgba(119, 93, 122, 0);
+    border: 1px solid rgba(90, 4, 77, 0.507);
 }
 
 .entry-body::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  background: linear-gradient(to right, rgba(80, 22, 76, 0.795), rgba(51, 2, 44, 0.61));
-  border: 1px solid rgba(51, 2, 44, 0.61);
+    border-radius: 10px;
+    background: linear-gradient(to right, rgba(80, 22, 76, 0.795), rgba(51, 2, 44, 0.61));
+    border: 1px solid rgba(51, 2, 44, 0.61);
 }
 
 .entry-body::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to left, rgba(80, 22, 76, 0.795), rgba(51, 2, 44, 0.61));
+    background: linear-gradient(to left, rgba(80, 22, 76, 0.795), rgba(51, 2, 44, 0.61));
 }
 
 .entry-body::-webkit-scrollbar-thumb:active {
-  background: linear-gradient(to left, rgba(80, 22, 76, 0.795), rgba(51, 2, 44, 0.61));
+    background: linear-gradient(to left, rgba(80, 22, 76, 0.795), rgba(51, 2, 44, 0.61));
 }
 
 .bg-light {
-  background-color: rgba(119, 93, 122, 0.158);
-  color: rgba(252, 250, 244, 0.822);
-  font-size: 14px;
-  text-shadow: 1px 2px rgba(41, 30, 46, 0.432);
+    background-color: rgba(119, 93, 122, 0.158);
+    color: rgba(252, 250, 244, 0.822);
+    font-size: 14px;
+    text-shadow: 1px 2px rgba(41, 30, 46, 0.432);
 }
 
 .card-content-text {
-  display: inline-block;
-  min-width: 255px;
-  max-width: 90%;
-  word-wrap: break-word;
-  padding: 0px;
+    display: inline-block;
+    min-width: 255px;
+    max-width: 90%;
+    word-wrap: break-word;
+    padding: 0px;
 }
 
 .right-btn {
-  max-width: 45px;
-  min-width: 5%;
-  display: inline-block;
+    max-width: 45px;
+    min-width: 5%;
+    display: inline-block;
 }
 
 .pad-5 {
-  padding: 5px;
+    padding: 5px;
 }
 
 .mat-18 {
-  margin-right: -50px;
+    margin-right: -50px;
 }
 
 .sub-note {
-  font-size: 8pt;
-  font-weight: 300;
+    font-size: 8pt;
+    font-weight: 300;
 }
 
 .entry-footer {
-  max-height: 10%;
-  min-height: 60px;
+    max-height: 10%;
+    min-height: 60px;
 }
 
 .no-padding {
-  padding: 0px;
+    padding: 0px;
 }
 
 .no-margin {
-  margin: 0px;
+    margin: 0px;
 }
 
 .input-area {
-  margin: 6px 0px 0px 0px;
-  background-color: rgba(255, 255, 255, 0.730);
-  border-radius: 20px 20px;
-  max-height: 100%;
-  min-height: 40px;
+    margin: 6px 0px 0px 0px;
+    background-color: rgba(255, 255, 255, 0.680);
+    border-radius: 20px 20px;
+    max-height: 100%;
+    min-height: 40px;
 }
 
 .input-text {
-  border-left: 0px;
-  border-right: 0px;
-  border-top: 0px;
-  border-bottom: 2px;
-  border-bottom-color: rgb(70, 38, 71);
-  border-bottom-style: solid;
-  margin: 1px 0px 0px 20px;
-  max-height: 28px;
-  min-height: 75%;
-  max-width: 80%;
-  background-color: initial;
+    margin: 1px 0px 0px 20px;
+    max-height: 28px;
+    min-height: 75%;
+    max-width: 80%;
+    background: linear-gradient(to right, rgba(207, 197, 212, 0.384), rgba(204, 197, 207, 1));
+    border-radius: 15px 15px;
+    border-top: 2px solid rgba(184, 179, 187, 0.404);
+    border-left: 2px solid rgb(209, 203, 212);
+    border-right: 1px solid rgba(213, 191, 223, 0.712);
+    border-bottom: 3px solid rgba(204, 197, 207, 1);
+    padding-left: 15px;
+    outline-color:  rgba(255, 255, 255, 0);
+}
+
+.input-text::selection{
+  outline-color: rgb(196, 41, 41);
 }
 
 .input-ent-btn {
-  color: rgb(70, 38, 71);
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-  margin: 0px 0px 0px 5px;
-  padding-top: 5px;
-  max-height: 28px;
-  min-height: 75%;
-  max-width: 30px;
+    color: rgb(70, 38, 71);
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 0px 0px 0px 5px;
+    max-height: 28px;
+    min-height: 75%;
+    max-width: 30px;
 }
 
-
 .delete-line {
-  padding-left: 5px;
-  margin-top:5px;
-  font-size: 14px;
-  cursor: pointer;
-  color: rgba(161, 133, 187, 0.938);
+    padding-left: 5px;
+    margin-top: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    color: rgba(161, 133, 187, 0.938);
 }

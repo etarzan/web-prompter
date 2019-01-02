@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, TemplateRef, ElementRef } from '@angular/core';
 import { PrompterService } from 'src/app/prompter.service';
 
 @Component({
@@ -10,13 +10,16 @@ export class EntryUnitComponent implements OnInit {
 
   lines = [];
   lineinput = '';
-  editIndex;
+  editIndex: number;
+  @ViewChild('input_text') textInputElement: ElementRef<HTMLInputElement>;
+
   constructor(private readonly prompterService: PrompterService) { }
   ngOnInit() {
     this.editIndex = null;
     this.prompterService.getLines().subscribe(data => {
       this.lines = data;
     });
+    this.textInputElement.nativeElement.autofocus = true;
   }
 
   addInputLineOnEnter(event) {
@@ -47,12 +50,13 @@ export class EntryUnitComponent implements OnInit {
     } else {
       alert('Can\'t Delete while editing list');
     }
+    this.textInputElement.nativeElement.focus();
   }
 
-  onClickEdit(index) {
-    console.log(index);
+  onClickEdit(index: number) {
     this.lineinput = this.lines[index];
     this.editIndex = index;
+    this.textInputElement.nativeElement.focus();
   }
 
 }
