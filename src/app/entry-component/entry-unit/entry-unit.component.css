@@ -103,11 +103,7 @@
     border-right: 1px solid rgba(213, 191, 223, 0.712);
     border-bottom: 3px solid rgba(204, 197, 207, 1);
     padding-left: 15px;
-    outline-color:  rgba(255, 255, 255, 0);
-}
-
-.input-text::selection{
-  outline-color: rgb(196, 41, 41);
+    outline-color:  rgba(194, 186, 198, 0.199);
 }
 
 .input-ent-btn {
