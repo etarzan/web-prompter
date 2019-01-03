@@ -24,6 +24,6 @@ export class PrompterService {
   }
 
   deleteElement(index) {
-    this.inputLines.splice(index - 1, 1);
+    this.inputLines.splice(index, 1);
   }
 }
