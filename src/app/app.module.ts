@@ -22,6 +22,7 @@ import { ControlUnitComponent } from './entry-component/control-unit/control-uni
 import { EntryUnitComponent } from './entry-component/entry-unit/entry-unit.component';
 import { ControlBarComponent } from './control-bar/control-bar.component';
 import { PrompterService } from './prompter.service';
+import { PrompterComponent } from './prompter/prompter.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { PrompterService } from './prompter.service';
     AppNavbarComponent,
     ControlUnitComponent,
     EntryUnitComponent,
-    ControlBarComponent
+    ControlBarComponent,
+    PrompterComponent
   ],
   imports: [
     BrowserModule,
