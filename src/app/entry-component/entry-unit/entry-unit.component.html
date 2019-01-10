@@ -4,8 +4,8 @@
       below</span>
     <mat-card *ngFor="let line of lines; let i=index" class="bg-light pad-5">
       <div class="card-content-text col-sm-10">{{line}}</div>
-      <mat-icon class="col-sm-1 delete-line" (click)="onClickEdit(i)">edit</mat-icon>
-      <mat-icon class="col-sm-1 delete-line" (click)="deleteElement(i)">cancel</mat-icon>
+      <mat-icon class="col-sm-1 card-action-btns" (click)="onClickEdit(i)">edit</mat-icon>
+      <mat-icon class="col-sm-1 card-action-btns" (click)="deleteElement(i)">cancel</mat-icon>
     </mat-card>
   </div>
   <div class="entry-footer col-md-12 pad-5">

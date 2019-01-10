@@ -50,7 +50,7 @@ export class EntryUnitComponent implements OnInit {
     } else {
       alert('Can\'t Delete while editing list');
     }
-    this.textInputElement.nativeElement.focus();
+   // this.textInputElement.nativeElement.focus();
   }
 
   onClickEdit(index: number) {
