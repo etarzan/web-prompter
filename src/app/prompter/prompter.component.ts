@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PrompterService } from '../prompter.service';
 
 @Component({
   selector: 'app-prompter',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrompterComponent implements OnInit {
 
-  constructor() { }
+    prompterText: string [] = [''];
+
+  constructor(private prompterService: PrompterService) { }
 
   ngOnInit() {
+    this.prompterService.getLines().subscribe( lines =>{
+        this.prompterText = lines;
+    });
   }
 
 }

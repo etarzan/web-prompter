@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MomentModule } from 'ngx-moment';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -46,7 +47,13 @@ import { PrompterComponent } from './prompter/prompter.component';
     MatGridListModule,
     MatListModule,
     MatCardModule,
-    FormsModule
+    FormsModule,
+    MomentModule.forRoot({
+        relativeTimeThresholdOptions: {
+            'm' : 59,
+            's' : 59
+        }
+    })
 
 
   ],
