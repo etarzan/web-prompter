@@ -11,7 +11,7 @@ export class EntryUnitComponent implements OnInit {
   lines = [];
   lineinput = '';
   editIndex: number;
-  @ViewChild('input_text') textInputElement: ElementRef<HTMLInputElement>;
+  @ViewChild('input_text', {static:false}) textInputElement: ElementRef<HTMLInputElement>;
 
   constructor(private readonly prompterService: PrompterService) { }
   ngOnInit() {
@@ -34,7 +34,7 @@ export class EntryUnitComponent implements OnInit {
     }
 
   }
-  
+
   addInputLine() {
     if (!(this.editIndex === undefined || this.editIndex === null) && this.editIndex > -1) {
       this.prompterService.editLine(this.lineinput, this.editIndex);
