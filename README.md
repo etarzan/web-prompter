@@ -6,9 +6,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 The application is intended for use as a web application based tele-prompter.
 Initial goals are:
-- Speed controlled Reading (2 routes -- one for entering text and setting various prompter controls, while the other, for viewing as per prompter control settings)
+- Speed controlled Reading
+- (2 ng routes -- one for entering text and setting various prompter controls, while the other, for viewing as per prompter control settings)
 - Upload a text file and set reading controls instead of typing on the tool
-- Deploy in a publicly available URL 
+- Deploy in a publicly available URL
 - Provide download as an electron app
 - Print content as pdf
 
