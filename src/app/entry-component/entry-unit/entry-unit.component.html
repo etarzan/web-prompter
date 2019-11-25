@@ -1,21 +1,20 @@
 <div class="entry-unit mat-elevation-z1  fill pad-5 col-md-12">
-  <div class="entry-body col-md-12">
-    <span [style.display]="lines.length < 1 ?  'block' : 'none'">No Text to display. Start typing into the input box
-      below</span>
-    <mat-card *ngFor="let line of lines; let i=index" class="bg-light pad-5">
-      <div class="card-content-text col-sm-10">{{line}}</div>
-      <mat-icon class="col-sm-1 card-action-btns" (click)="onClickEdit(i)">edit</mat-icon>
-      <mat-icon class="col-sm-1 card-action-btns" (click)="deleteElement(i)">cancel</mat-icon>
-    </mat-card>
-  </div>
-  <div class="entry-footer col-md-12 pad-5">
-    <div class="input-area mat-elevation-z5 pad-5 row">
-      <input #input_text placeholder="Type lines here. Press Enter for new line." [(ngModel)]="lineinput"
-            class="input-text mat-elevation-z0 col-md-10 no-padding"
-            (keypress)="addInputLineOnEnter($event)">
-      <mat-icon class="col-md-1 input-ent-btn no-padding col-md-1" (click)="addInputLine($event)">
-        subdirectory_arrow_left
-      </mat-icon>
+    <div class="entry-body col-md-12">
+        <span [style.display]="lines.length < 1 ?  'block' : 'none'">No Text to display. Start typing into the input box
+            below</span>
+        <mat-card *ngFor="let line of lines; let i=index" class="bg-light pad-5">
+            <div class="card-content-text col-sm-10">{{line}}</div>
+            <mat-icon class="col-sm-1 card-action-btns" (click)="onClickEdit(i)">edit</mat-icon>
+            <mat-icon class="col-sm-1 card-action-btns" (click)="deleteElement(i)">cancel</mat-icon>
+        </mat-card>
     </div>
-  </div>
+    <div class="entry-footer col-md-12 pad-5">
+        <div class="input-area mat-elevation-z5 pad-5 row">
+            <input #input_text placeholder="Type lines here. Press Enter for new line." [(ngModel)]="lineinput"
+                class="input-text mat-elevation-z0 col-md-10 no-padding" (keypress)="addInputLineOnEnter($event)">
+            <mat-icon class="col-md-1 input-ent-btn no-padding col-md-1" (click)="addInputLine($event)">
+                subdirectory_arrow_left
+            </mat-icon>
+        </div>
+    </div>
 </div>
