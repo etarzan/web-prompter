@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MomentModule } from 'ngx-moment';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -17,7 +16,9 @@ import {
   MatIconModule,
   MatGridListModule,
   MatListModule,
-  MatCardModule
+  MatCardModule,
+  MatProgressBarModule,
+  MatButtonToggleModule
 } from '@angular/material';
 import { ControlUnitComponent } from './entry-component/control-unit/control-unit.component';
 import { EntryUnitComponent } from './entry-component/entry-unit/entry-unit.component';
@@ -47,15 +48,9 @@ import { PrompterComponent } from './prompter/prompter.component';
     MatGridListModule,
     MatListModule,
     MatCardModule,
+    MatProgressBarModule,
+    MatButtonToggleModule,
     FormsModule,
-    MomentModule.forRoot({
-        relativeTimeThresholdOptions: {
-            'm' : 59,
-            's' : 59
-        }
-    })
-
-
   ],
   providers: [PrompterService],
   bootstrap: [AppComponent]
