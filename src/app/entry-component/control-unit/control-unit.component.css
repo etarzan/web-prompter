@@ -1,4 +1,88 @@
-.control-unit{
-  padding:15px;
-  background: rgba(164, 11, 235, 0.158);
+.control-unit {
+    padding: 15px;
+    background: rgba(164, 11, 235, 0.158);
+    min-height: 366px;
+}
+
+::ng-deep .mat-line {
+    margin: 5px;
+}
+
+
+::ng-deep .mat-button-toggle-group {
+    box-shadow: 0 0 0 0;
+}
+
+::ng-deep .mat-button-toggle-group-appearance-standard {
+    border: 0px;
+}
+
+.row {
+    margin-left: 0px;
+}
+
+.togglers {
+    font-size: 12px;
+    border-radius: 30px 30px;
+    font-weight: 900;
+    height: 30px;
+    width: 30px;
+    margin: 2px;
+}
+
+::ng-deep .mat-button-toggle-label-content {
+    height: 30px;
+    width: 30px;
+    margin: 0px 0px;
+    padding: 0px 0px !important;
+    line-height: 0px !important;
+    vertical-align: middle;
+}
+
+::ng-deep .mat-button-toggle-label-content .material-icons{
+    font-size: medium;
+    font-weight: bold;
+}
+
+.solidGray {
+    background-color: #1f1e1e;
+    color: #4e4d4d;
+}
+
+.solidRed {
+    background-color: #660404;
+    color: rgb(121, 78, 78);
+}
+
+.solidBlue {
+    background-color: #0900ee;
+    color: #6360ca;
+
+}
+
+.solidOffWhite {
+    background-color: #faeefd;
+    color: #989299;
+}
+
+.solidGrayBack {
+    background-color: #302d2d;
+    color: rgb(100, 100, 100);
+}
+
+.solidRedBack {
+    background-color: #7e3131;
+   color: #b66161;
+
+}
+
+.solidBlueBack {
+    background-color: #98b8ff;
+    color: #435a8b;
+
+}
+
+.solidOffWhiteBack {
+    background-color: #d4d0e6;
+    color: #526296;
 }

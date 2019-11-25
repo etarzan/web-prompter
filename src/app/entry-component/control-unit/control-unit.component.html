@@ -1,25 +1,118 @@
-<mat-list class="control-unit mat-elevation-z5">
-  <h3 mat-subheader>Text Controls</h3>
-  <mat-list-item>
-    <mat-icon mat-list-icon>format_size</mat-icon>
-    <h4 mat-line>Text Size</h4>
-    <p mat-line> Size of the scrolling text </p>
-  </mat-list-item>
-  <mat-list-item>
-    <mat-icon mat-list-icon>color_lens</mat-icon>
-    <h4 mat-line>Text color</h4>
-    <p mat-line>Color of the scrolling text</p>
-  </mat-list-item>
-  <mat-divider></mat-divider>
-  <h3 mat-subheader>Page Controls</h3>
-  <mat-list-item>
-    <mat-icon mat-list-icon>format_color_fill</mat-icon>
-    <h4 mat-line>Background Color</h4>
-    <p mat-line> Control the color of the prompter </p>
-  </mat-list-item>
-  <mat-list-item>
-    <mat-icon mat-list-icon>timer</mat-icon>
-    <h4 mat-line>Scroll Speed</h4>
-    <p mat-line> Speed of the scrolling text </p>
-  </mat-list-item>
+<mat-list class="control-unit mat-elevation-z5 col-md-12">
+    <h3 mat-subheader>Text Controls</h3>
+    <mat-list-item>
+        <div class="controlLabels col-md-6">
+            <div class="row">
+                <mat-icon mat-list-icon>format_size</mat-icon>
+                <h4 mat-line>Text Size</h4>
+            </div>
+        </div>
+        <div class="col-md-6 row">
+            <mat-button-toggle-group value="center" #textsize="matButtonToggleGroup">
+                <mat-button-toggle value="left">
+                    <mat-icon>emoji_people</mat-icon>
+                </mat-button-toggle>
+                <mat-button-toggle value="center">
+                    <mat-icon>directions_walk</mat-icon>
+                </mat-button-toggle>
+                <mat-button-toggle value="right">
+                    <mat-icon>directions_run</mat-icon>
+                </mat-button-toggle>
+                <mat-button-toggle value="justify">
+                    <mat-icon>directions_bike</mat-icon>
+                </mat-button-toggle>
+            </mat-button-toggle-group>
+            <div class="example-selected-value">Selected value: {{textsize.value}}</div>
+        </div>
+    </mat-list-item>
+    <mat-list-item>
+        <div class="controlLabels col-sm-6">
+            <div class="row">
+                <mat-icon mat-list-icon>color_lens</mat-icon>
+                <h4 mat-line>Text color</h4>
+            </div>
+        </div>
+        <div class=" col-sm-6">
+            <div class="row">
+                <mat-button-toggle-group #group="matButtonToggleGroup" vertical="false"
+                    (change)="checkTextColor($event)" #textColorGroup="matButtonToggleGroup">
+                    <mat-button-toggle class="togglers solidOffWhite" value="#faeefd" #textColor1="matButtonToggle">
+                        <mat-icon *ngIf="textColor1.checked" class="mt-2"> check
+                        </mat-icon>
+                    </mat-button-toggle>
+                    <mat-button-toggle class="togglers solidBlue" value="#0900ee" #textColor2="matButtonToggle">
+                        <mat-icon *ngIf="textColor2.checked" class="mt-2"> check
+                        </mat-icon>
+                    </mat-button-toggle>
+                    <mat-button-toggle class="togglers solidRed" value="#660404" #textColor3="matButtonToggle">
+                        <mat-icon *ngIf="textColor3.checked" class="mt-2"> check
+                        </mat-icon>
+                    </mat-button-toggle>
+                    <mat-button-toggle class="togglers solidGray" value="#1f1e1e" #textColor4="matButtonToggle">
+                        <mat-icon *ngIf="textColor4.checked" class="mt-2"> check
+                        </mat-icon>
+                    </mat-button-toggle>
+                </mat-button-toggle-group>
+            </div>
+        </div>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <h3 mat-subheader>Page Controls</h3>
+    <mat-list-item>
+        <div class="controlLabels  col-md-6">
+            <div class="row">
+                <mat-icon mat-list-icon>speed</mat-icon>
+                <h4 mat-line>Scroll Speed</h4>
+            </div>
+
+        </div>
+        <div class="col-md-6 row">
+            <mat-button-toggle-group value="center" #scrollspeed="matButtonToggleGroup">
+                <mat-button-toggle value="left">
+                    <mat-icon>emoji_people</mat-icon>
+                </mat-button-toggle>
+                <mat-button-toggle value="center">
+                    <mat-icon>directions_walk</mat-icon>
+                </mat-button-toggle>
+                <mat-button-toggle value="right">
+                    <mat-icon>directions_run</mat-icon>
+                </mat-button-toggle>
+                <mat-button-toggle value="justify">
+                    <mat-icon>directions_bike</mat-icon>
+                </mat-button-toggle>
+            </mat-button-toggle-group>
+            <div class="example-selected-value">Selected value: {{scrollspeed.value}}</div>
+        </div>
+    </mat-list-item>
+    <mat-list-item>
+        <div class="controlLabels col-md-6">
+            <div class="row">
+                <mat-icon mat-list-icon>format_color_fill</mat-icon>
+                <h4 mat-line>Background Color</h4>
+            </div>
+        </div>
+        <div class=" col-md-6">
+            <div class="row">
+                <mat-button-toggle-group #group="matButtonToggleGroup" vertical="false"
+                    (change)="checkBackColor($event)" #backColorGroup="matButtonToggleGroup">
+                    <mat-button-toggle class="togglers solidOffWhiteBack" value="#d4d0e6" #backColor1="matButtonToggle">
+                        <mat-icon *ngIf="backColor1.checked" class="mt-2"> check
+                        </mat-icon>
+                    </mat-button-toggle>
+                    <mat-button-toggle class="togglers solidBlueBack" value="#98b8ff" #backColor2="matButtonToggle">
+                        <mat-icon *ngIf="backColor2.checked" class="mt-2"> check
+                        </mat-icon>
+                    </mat-button-toggle>
+                    <mat-button-toggle class="togglers solidRedBack" value="#7e3131" #backColor3="matButtonToggle">
+                        <mat-icon *ngIf="backColor3.checked" class="mt-2"> check
+                        </mat-icon>
+                    </mat-button-toggle>
+                    <mat-button-toggle class="togglers solidGrayBack" value="#302d2d" #backColor4="matButtonToggle">
+                        <mat-icon *ngIf="backColor4.checked" class="mt-2"> check
+                        </mat-icon>
+                    </mat-button-toggle>
+                </mat-button-toggle-group>
+            </div>
+        </div>
+    </mat-list-item>
 </mat-list>
