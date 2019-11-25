@@ -7,6 +7,8 @@ import { Observable, of } from 'rxjs';
 export class PrompterService {
 
   inputLines: string[] = [];
+  textColor: string = "#363535";
+
   constructor() { }
 
   getLines(): Observable<string[]> {

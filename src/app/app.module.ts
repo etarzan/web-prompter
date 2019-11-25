@@ -17,7 +17,6 @@ import {
   MatGridListModule,
   MatListModule,
   MatCardModule,
-  MatProgressBarModule,
   MatButtonToggleModule
 } from '@angular/material';
 import { ControlUnitComponent } from './entry-component/control-unit/control-unit.component';
@@ -48,7 +47,6 @@ import { PrompterComponent } from './prompter/prompter.component';
     MatGridListModule,
     MatListModule,
     MatCardModule,
-    MatProgressBarModule,
     MatButtonToggleModule,
     FormsModule,
   ],
