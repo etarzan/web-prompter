@@ -2,30 +2,43 @@ import { Injectable, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class PrompterService {
 
-  inputLines: string[] = [];
-  textColor: string = "#363535";
-
-  constructor() { }
-
-  getLines(): Observable<string[]> {
-    return of(this.inputLines);
-  }
-
-  addLine(line: string) {
-    if (line.trim().length > 0) {
-      this.inputLines.push(line);
+    inputData: PrompterData = {
+        inputLines: [],
+        textColor: "#363535",
+        backColor: "#3635cc",
+        fontSize: 10,
+        scrollSpeed: 1
     }
-  }
 
-  editLine(lineinput, editIndex) {
-    this.inputLines.splice(editIndex, 1, lineinput);
-  }
+    constructor() { }
 
-  deleteElement(index) {
-    this.inputLines.splice(index, 1);
-  }
+    getData(): Observable<PrompterData> {
+        return of(this.inputData);
+    }
+
+    addLine(line: string) {
+        if (line.trim().length > 0) {
+            this.inputData.inputLines.push(line);
+        }
+    }
+
+    editLine(lineinput, editIndex) {
+        this.inputData.inputLines.splice(editIndex, 1, lineinput);
+    }
+
+    deleteElement(index) {
+        this.inputData.inputLines.splice(index, 1);
+    }
+}
+
+interface PrompterData {
+    inputLines: string[],
+    textColor: string,
+    backColor: string,
+    fontSize: Number,
+    scrollSpeed: Number
 }
