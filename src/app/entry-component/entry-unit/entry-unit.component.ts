@@ -17,8 +17,8 @@ export class EntryUnitComponent implements OnInit {
     constructor(private readonly prompterService: PrompterService) { }
     ngOnInit() {
         this.editIndex = null;
-        this.prompterService.getLines().subscribe(data => {
-            this.lines = data;
+        this.prompterService.getData().subscribe(data => {
+            this.lines = data.inputLines;
         });
         this.textInputElement.nativeElement.autofocus = true;
     }
