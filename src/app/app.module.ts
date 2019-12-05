@@ -19,6 +19,9 @@ import {
   MatCardModule,
   MatButtonToggleModule
 } from '@angular/material';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatSliderModule} from '@angular/material/slider';
+
 import { ControlUnitComponent } from './entry-component/control-unit/control-unit.component';
 import { EntryUnitComponent } from './entry-component/entry-unit/entry-unit.component';
 import { ControlBarComponent } from './control-bar/control-bar.component';
@@ -49,6 +52,8 @@ import { PrompterComponent } from './prompter/prompter.component';
     MatCardModule,
     MatButtonToggleModule,
     FormsModule,
+    MatTooltipModule,
+    MatSliderModule
   ],
   providers: [PrompterService],
   bootstrap: [AppComponent]

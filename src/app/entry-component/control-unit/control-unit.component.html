@@ -8,21 +8,7 @@
             </div>
         </div>
         <div class="col-md-6 row">
-            <mat-button-toggle-group value="center" #textsize="matButtonToggleGroup">
-                <mat-button-toggle value="left">
-                    <mat-icon>emoji_people</mat-icon>
-                </mat-button-toggle>
-                <mat-button-toggle value="center">
-                    <mat-icon>directions_walk</mat-icon>
-                </mat-button-toggle>
-                <mat-button-toggle value="right">
-                    <mat-icon>directions_run</mat-icon>
-                </mat-button-toggle>
-                <mat-button-toggle value="justify">
-                    <mat-icon>directions_bike</mat-icon>
-                </mat-button-toggle>
-            </mat-button-toggle-group>
-            <div class="example-selected-value">Selected value: {{textsize.value}}</div>
+            <mat-slider #fontsize min="10" value="20" max="60" step="10" thumbLabel tickInterval="auto"></mat-slider>
         </div>
     </mat-list-item>
     <mat-list-item>
@@ -67,21 +53,20 @@
 
         </div>
         <div class="col-md-6 row">
-            <mat-button-toggle-group value="center" #scrollspeed="matButtonToggleGroup">
-                <mat-button-toggle value="left">
+            <mat-button-toggle-group value="center" #scrollspeed="matButtonToggleGroup" value="1">
+                <mat-button-toggle value="1" matTooltip="scroll 1 line per second">
                     <mat-icon>emoji_people</mat-icon>
                 </mat-button-toggle>
-                <mat-button-toggle value="center">
+                <mat-button-toggle value="2" matTooltip="scroll 2 lines per second">
                     <mat-icon>directions_walk</mat-icon>
                 </mat-button-toggle>
-                <mat-button-toggle value="right">
+                <mat-button-toggle value="4" matTooltip="scroll 3 lines per second">
                     <mat-icon>directions_run</mat-icon>
                 </mat-button-toggle>
-                <mat-button-toggle value="justify">
+                <mat-button-toggle value="6" matTooltip="scroll 6 lines per second">
                     <mat-icon>directions_bike</mat-icon>
                 </mat-button-toggle>
             </mat-button-toggle-group>
-            <div class="example-selected-value">Selected value: {{scrollspeed.value}}</div>
         </div>
     </mat-list-item>
     <mat-list-item>
