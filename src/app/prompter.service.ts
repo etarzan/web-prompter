@@ -8,8 +8,8 @@ export class PrompterService {
 
     inputData: PrompterData = {
         inputLines: [],
-        textColor: "#363535",
-        backColor: "#3635cc",
+        textColor: "#faeefd",
+        backColor: "#d4d0e6",
         fontSize: 10,
         scrollSpeed: 1
     }

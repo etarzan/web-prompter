@@ -15,17 +15,40 @@ export class PrompterComponent implements OnInit {
     scrollspeed: Number;
     textcolor: string;
     backcolor: string;
+    timeLeft: number = 60;
+    interval;
+
+    prompterStyleObj: Object = {
+        "height": "480px",
+        "background-color": "#eee",
+        "color": "#111",
+    };
 
     constructor(private prompterService: PrompterService) { }
 
     ngOnInit() {
         this.prompterService.getData().subscribe(inputData => {
             this.prompterText = inputData.inputLines;
+            this.timeLeft = inputData.inputLines.length;
+
             this.fontsize = inputData.fontSize;
             this.scrollspeed = inputData.scrollSpeed;
-            this.textcolor = inputData.textColor;
-            this.backcolor = inputData.backColor;
+
+            this.prompterStyleObj["background-color"] = inputData.backColor;
+            this.prompterStyleObj["color"] = inputData.textColor;
         });
     }
+    startTimer() {
+        this.interval = setInterval(() => {
+            if (this.timeLeft > 0) {
+                this.timeLeft--;
+            } else {
+                this.timeLeft = 60;
+            }
+        }, 1000)
+    }
 
+    pauseTimer() {
+        clearInterval(this.interval);
+    }
 }

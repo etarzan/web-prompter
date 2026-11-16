@@ -5,8 +5,8 @@
 
 .entry-body {
     padding: 2px;
-    min-height: 296px;
-    max-height: 296px;
+    min-height: 430px;
+    max-height: 430px;
     background-color: rgba(164, 11, 235, 0.100);
     overflow-y: auto;
 }

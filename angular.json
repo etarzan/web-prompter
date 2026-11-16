@@ -57,11 +57,14 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "web-prompter:build"
-          },
+            "browserTarget": "web-prompter:build",
+            "host": "0.0.0.0",
+            "disableHostCheck": true,
+            "port": 4200          },
           "configurations": {
             "production": {
-              "browserTarget": "web-prompter:build:production"
+              "browserTarget": "web-prompter:build:production",
+              "disableHostCheck": false
             }
           }
         },
