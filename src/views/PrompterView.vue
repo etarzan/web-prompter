@@ -26,6 +26,15 @@
       <span class="material-icons">arrow_back</span>
     </RouterLink>
 
+    <!-- Reset button -->
+    <button
+      class="overlay-btn reset-btn"
+      title="Reset to top (R)"
+      @click.stop="resetScroll"
+    >
+      <span class="material-icons">replay</span>
+    </button>
+
     <!-- Play / Pause button -->
     <button
       class="overlay-btn play-btn"
@@ -108,6 +117,15 @@ function scroll(ts: number) {
   rafId = requestAnimationFrame(scroll)
 }
 
+function resetScroll() {
+  if (wrapperEl.value) wrapperEl.value.scrollTop = 0
+  if (playing.value) {
+    cancelAnimationFrame(rafId)
+    playing.value = false
+    lastTs = 0
+  }
+}
+
 function togglePlay() {
   if (store.lines.length === 0) return
   playing.value = !playing.value
@@ -133,12 +151,7 @@ function onKeyDown(e: KeyboardEvent) {
     store.toggleMirror()
   }
   if (e.key === 'r' || e.key === 'R') {
-    if (wrapperEl.value) wrapperEl.value.scrollTop = 0
-    if (playing.value) {
-      cancelAnimationFrame(rafId)
-      playing.value = false
-      lastTs = 0
-    }
+    resetScroll()
   }
 }
 
@@ -212,6 +225,7 @@ onUnmounted(() => {
 .play-btn .material-icons { font-size: 36px; }
 
 .mirror-toggle { top: 16px; right: 16px; }
+.reset-btn { bottom: 20px; right: 84px; }
 .mirror-toggle--active {
   background: rgba(156, 68, 204, 0.70);
   color: #fff;
