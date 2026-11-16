@@ -9,14 +9,16 @@
 
 <style scoped>
 .navbar {
-  background: var(--navbar-bg);
+  background: var(--navbar-gradient);
   color: var(--navbar-text);
   box-shadow: var(--elevation-12);
-  padding: 8px 16px;
+  padding: 10px 16px 8px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
+  /* bottom rim that blends into the body glow */
+  border-bottom: 1px solid rgba(190, 130, 255, 0.20);
 }
 
 .navbar-inner {
@@ -25,15 +27,18 @@
 
 .banner-title {
   font-family: var(--font-display);
-  font-size: 1.8rem;
+  font-size: 2rem;
   margin: 0;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.04em;
+  color: var(--banner-color);
+  text-shadow: var(--banner-shadow);
 }
 
 .banner-sub {
   font-size: 0.62rem;
-  margin: 0;
+  margin: 2px 0 0;
   font-family: 'Lucida Sans Unicode', 'Lucida Grande', Verdana, sans-serif;
-  opacity: 0.9;
+  color: rgba(255, 220, 255, 0.70);
+  letter-spacing: 0.06em;
 }
 </style>

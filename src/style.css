@@ -3,36 +3,40 @@
   --font-body: 'Roboto', 'Helvetica Neue', sans-serif;
   --font-display: 'Sedgwick Ave', cursive;
 
-  /* Purple panel wash */
-  --panel-bg: rgba(164, 11, 235, 0.158);
-  --panel-inner-bg: rgba(164, 11, 235, 0.10);
+  /* Navbar gradient */
+  --navbar-gradient: linear-gradient(135deg, #2a005f 0%, #5a00cc 55%, #7c3aed 100%);
+  --navbar-text: #fff;
+
+  /* Banner title — warm golden amber (complementary to purple) */
+  --banner-color: #ffd04a;
+  /* Banner shadow — rose-magenta as supplementary */
+  --banner-shadow: 2px 3px 0 #cc006a, 5px 6px 14px rgba(204, 0, 106, 0.35);
+
+  /* Glass panels — sit on top of the purple-glow body */
+  --panel-bg: rgba(255, 255, 255, 0.07);
+  --panel-border: rgba(190, 130, 255, 0.18);
+  --panel-inner-bg: rgba(255, 255, 255, 0.04);
 
   /* Input pill */
-  --input-bg: rgba(255, 255, 255, 0.68);
-  --input-border-top: rgba(184, 179, 187, 0.4);
-  --input-border-left: rgb(209, 203, 212);
-  --input-border-right: rgba(213, 191, 223, 0.71);
-  --input-border-bottom: rgba(204, 197, 207, 1);
-  --input-gradient: linear-gradient(to right, rgba(207, 197, 212, 0.38), rgba(204, 197, 207, 1));
+  --input-bg: rgba(255, 255, 255, 0.92);
+  --input-text: #1a0a2e;
+  --input-placeholder: rgba(80, 50, 100, 0.55);
 
   /* Icon / action colours */
-  --icon-muted: rgba(161, 133, 187, 0.94);
-  --icon-action: rgb(70, 38, 71);
+  --icon-muted: rgba(200, 170, 230, 0.90);
+  --icon-action: #9c44cc;
 
   /* Scrollbar */
-  --scrollbar-track-border: rgba(90, 4, 77, 0.51);
-  --scrollbar-thumb: linear-gradient(to right, rgba(80, 22, 76, 0.80), rgba(51, 2, 44, 0.61));
-  --scrollbar-thumb-hover: linear-gradient(to left, rgba(80, 22, 76, 0.80), rgba(51, 2, 44, 0.61));
-  --scrollbar-bg: rgba(119, 93, 122, 0.16);
+  --scrollbar-bg: rgba(100, 50, 150, 0.12);
+  --scrollbar-track-border: rgba(150, 80, 220, 0.30);
+  --scrollbar-thumb: linear-gradient(to bottom, rgba(140, 50, 180, 0.80), rgba(80, 20, 120, 0.70));
+  --scrollbar-thumb-hover: linear-gradient(to bottom, rgba(170, 80, 210, 0.90), rgba(100, 30, 150, 0.80));
 
   /* Card */
-  --card-bg: rgba(119, 93, 122, 0.16);
-  --card-text: rgba(252, 250, 244, 0.82);
-  --card-shadow: 1px 2px rgba(41, 30, 46, 0.43);
-
-  /* Navbar */
-  --navbar-bg: #6200ea;
-  --navbar-text: #fff;
+  --card-bg: rgba(190, 130, 255, 0.10);
+  --card-border: rgba(190, 130, 255, 0.20);
+  --card-text: rgba(252, 246, 255, 0.90);
+  --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
 
   /* Prompter text/bg preset swatches */
   --swatch-text-offwhite: #faeefd;
@@ -45,12 +49,18 @@
   --swatch-back-red: #7e3131;
   --swatch-back-dark: #302d2d;
 
+  /* Keyboard hint chip */
+  --hint-bg: rgba(255, 255, 255, 0.07);
+  --hint-border: rgba(190, 130, 255, 0.22);
+  --hint-key-bg: rgba(190, 130, 255, 0.18);
+  --hint-text: rgba(220, 190, 255, 0.80);
+
   /* Misc */
   --radius-pill: 20px;
   --radius-round: 50%;
-  --elevation-1: 0 1px 3px rgba(0,0,0,.2);
-  --elevation-5: 0 3px 10px rgba(0,0,0,.3);
-  --elevation-12: 0 6px 20px rgba(0,0,0,.4);
+  --elevation-1: 0 1px 4px rgba(0,0,0,.35);
+  --elevation-5: 0 4px 14px rgba(0,0,0,.45);
+  --elevation-12: 0 8px 28px rgba(0,0,0,.55);
 }
 
 /* ── Reset / base ───────────────────────────────────────── */
@@ -61,8 +71,12 @@ html, body {
   padding: 0;
   height: 100%;
   font-family: var(--font-body);
-  background: #1a1025;
-  color: #f0ebf5;
+  /* deep midnight with a purple bloom at the top */
+  background:
+    radial-gradient(ellipse 100% 50% at 50% 0%, rgba(98, 0, 234, 0.45) 0%, transparent 70%),
+    #07040f;
+  background-attachment: fixed;
+  color: #ede6f7;
 }
 
 #app {
@@ -77,7 +91,7 @@ html, body {
 .icon-muted  { color: var(--icon-muted); }
 
 /* ── Custom scrollbar (webkit) ──────────────────────────── */
-.custom-scroll::-webkit-scrollbar { width: 10px; background: var(--scrollbar-bg); }
+.custom-scroll::-webkit-scrollbar { width: 8px; background: var(--scrollbar-bg); }
 .custom-scroll::-webkit-scrollbar-track {
   border-radius: 15px;
   background: transparent;
@@ -86,6 +100,5 @@ html, body {
 .custom-scroll::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background: var(--scrollbar-thumb);
-  border: 1px solid rgba(51, 2, 44, 0.61);
 }
 .custom-scroll::-webkit-scrollbar-thumb:hover { background: var(--scrollbar-thumb-hover); }

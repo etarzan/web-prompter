@@ -26,6 +26,7 @@
           class="input-text"
           placeholder="Type lines here. Press Enter for a new line."
           @keypress="onKeyPress"
+          @keydown="onKeyDown"
         />
         <span class="material-icons icon-action input-submit-btn" @click="submit" title="Add line">
           subdirectory_arrow_left
@@ -66,6 +67,13 @@ function onKeyPress(e: KeyboardEvent) {
   if (e.key === 'Enter') submit()
 }
 
+function onKeyDown(e: KeyboardEvent) {
+  if (e.key === 'Escape') {
+    editIndex.value = null
+    draft.value = ''
+  }
+}
+
 function startEdit(i: number) {
   editIndex.value = i
   draft.value = store.lines[i]
@@ -81,6 +89,8 @@ function remove(i: number) {
 <style scoped>
 .entry-unit {
   background: var(--panel-bg);
+  border-right: 1px solid var(--panel-border);
+  backdrop-filter: blur(8px);
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -89,33 +99,39 @@ function remove(i: number) {
 .entry-body {
   flex: 1;
   min-height: 0;
-  padding: 6px;
+  padding: 8px;
   background: var(--panel-inner-bg);
   overflow-y: auto;
 }
 
 .empty-hint {
-  color: rgba(252, 250, 244, 0.5);
+  color: rgba(210, 185, 240, 0.45);
   font-size: 0.85rem;
-  padding: 12px;
+  padding: 14px;
   margin: 0;
+  font-style: italic;
 }
 
 .line-card {
   display: flex;
   align-items: center;
   background: var(--card-bg);
+  border: 1px solid var(--card-border);
   color: var(--card-text);
   font-size: 14px;
-  text-shadow: var(--card-shadow);
-  border-radius: 4px;
-  padding: 6px 8px;
-  margin-bottom: 4px;
-  gap: 4px;
+  box-shadow: var(--card-shadow);
+  border-radius: 6px;
+  padding: 7px 10px;
+  margin-bottom: 5px;
+  gap: 6px;
+  transition: background 0.12s;
 }
 
+.line-card:hover { background: rgba(200, 150, 255, 0.14); }
+
 .line-card--editing {
-  outline: 1px solid rgba(161, 133, 187, 0.6);
+  border-color: rgba(200, 150, 255, 0.55);
+  background: rgba(200, 150, 255, 0.12);
 }
 
 .line-text {
@@ -131,10 +147,10 @@ function remove(i: number) {
   transition: color 0.1s;
 }
 
-.card-btn:hover { color: rgba(220, 200, 240, 1); }
+.card-btn:hover { color: rgba(255, 210, 100, 0.95); }
 
 .entry-footer {
-  padding: 6px;
+  padding: 8px;
   flex-shrink: 0;
 }
 
@@ -143,9 +159,9 @@ function remove(i: number) {
   align-items: center;
   background: var(--input-bg);
   border-radius: var(--radius-pill);
-  padding: 4px 10px;
+  padding: 4px 12px;
   box-shadow: var(--elevation-5);
-  min-height: 40px;
+  min-height: 42px;
 }
 
 .input-text {
@@ -155,11 +171,11 @@ function remove(i: number) {
   background: transparent;
   font-family: var(--font-body);
   font-size: 14px;
-  color: #2a1a2e;
+  color: var(--input-text);
   padding: 2px 8px;
 }
 
-.input-text::placeholder { color: rgba(80, 60, 90, 0.6); }
+.input-text::placeholder { color: var(--input-placeholder); }
 
 .input-submit-btn {
   font-size: 26px;

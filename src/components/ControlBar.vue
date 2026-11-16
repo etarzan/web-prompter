@@ -13,7 +13,8 @@
   left: 0;
   width: 100%;
   height: 56px;
-  background: var(--navbar-bg);
+  background: var(--navbar-gradient);
+  border-top: 1px solid rgba(190, 130, 255, 0.20);
   box-shadow: var(--elevation-12);
   display: flex;
   justify-content: center;

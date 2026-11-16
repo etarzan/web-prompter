@@ -40,6 +40,9 @@
       <span class="material-icons">flip</span> Mirror
     </div>
 
+    <!-- Keyboard hints -->
+    <KeyboardHints screen="prompter" />
+
     <!-- Empty state -->
     <div v-if="store.lines.length === 0" class="empty-overlay">
       <p>No script yet.</p>
@@ -51,6 +54,7 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, computed } from 'vue'
 import { usePrompterStore } from '../stores/prompter'
+import KeyboardHints from '../components/KeyboardHints.vue'
 
 const store = usePrompterStore()
 

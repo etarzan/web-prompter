@@ -139,16 +139,17 @@ const speeds: { value: 1 | 2 | 4 | 6; icon: string; label: string }[] = [
 <style scoped>
 .control-unit {
   background: var(--panel-bg);
+  backdrop-filter: blur(8px);
   padding: 16px;
   height: 100%;
   overflow-y: auto;
 }
 
 .section-header {
-  color: rgba(230, 210, 240, 0.8);
-  font-size: 0.75rem;
+  color: rgba(210, 185, 255, 0.65);
+  font-size: 0.72rem;
   font-weight: 500;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.10em;
   text-transform: uppercase;
   margin: 8px 0 10px;
 }
@@ -178,13 +179,13 @@ const speeds: { value: 1 | 2 | 4 | 6; icon: string; label: string }[] = [
 
 .slider {
   flex: 1;
-  accent-color: var(--navbar-bg);
+  accent-color: #9c44cc;
   cursor: pointer;
 }
 
 .slider-label {
   font-size: 0.78rem;
-  color: rgba(230, 210, 240, 0.7);
+  color: rgba(210, 185, 255, 0.70);
   min-width: 36px;
 }
 
@@ -201,58 +202,60 @@ const speeds: { value: 1 | 2 | 4 | 6; icon: string; label: string }[] = [
   align-items: center;
   justify-content: center;
   padding: 0;
-  transition: border-color 0.15s;
+  transition: border-color 0.15s, transform 0.12s;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
 }
 
-.swatch--active { border-color: rgba(255,255,255,0.8); }
+.swatch:hover { transform: scale(1.12); }
+.swatch--active { border-color: rgba(255, 208, 74, 0.90); }
 
-.check-icon { font-size: 14px; color: rgba(255,255,255,0.9); }
+.check-icon { font-size: 14px; color: rgba(255,255,255,0.95); }
 
 /* Speed buttons */
 .speed-btn {
-  background: rgba(100, 60, 120, 0.3);
-  border: 1px solid rgba(161, 133, 187, 0.3);
+  background: rgba(190, 130, 255, 0.10);
+  border: 1px solid var(--panel-border);
   border-radius: 6px;
   color: var(--icon-muted);
   cursor: pointer;
-  padding: 4px 8px;
+  padding: 5px 9px;
   display: flex;
   align-items: center;
-  transition: background 0.15s, color 0.15s;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
 }
 
-.speed-btn:hover { background: rgba(100, 60, 120, 0.5); }
+.speed-btn:hover { background: rgba(190, 130, 255, 0.20); }
 
 .speed-btn--active {
-  background: var(--navbar-bg);
+  background: rgba(156, 68, 204, 0.70);
   color: #fff;
-  border-color: transparent;
+  border-color: rgba(200, 150, 255, 0.40);
 }
 
 .speed-btn .material-icons { font-size: 20px; }
 
 /* Mirror toggle */
 .mirror-btn {
-  background: rgba(100, 60, 120, 0.3);
-  border: 1px solid rgba(161, 133, 187, 0.3);
+  background: rgba(190, 130, 255, 0.10);
+  border: 1px solid var(--panel-border);
   border-radius: 20px;
   color: var(--icon-muted);
   cursor: pointer;
-  padding: 4px 20px;
+  padding: 5px 20px;
   font-size: 0.85rem;
   font-family: var(--font-body);
   transition: background 0.15s, color 0.15s;
 }
 
 .mirror-btn--active {
-  background: var(--navbar-bg);
+  background: rgba(156, 68, 204, 0.70);
   color: #fff;
-  border-color: transparent;
+  border-color: rgba(200, 150, 255, 0.40);
 }
 
 .divider {
   border: none;
-  border-top: 1px solid rgba(161, 133, 187, 0.25);
+  border-top: 1px solid rgba(190, 130, 255, 0.18);
   margin: 10px 0 14px;
 }
 </style>
