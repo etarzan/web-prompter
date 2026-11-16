@@ -16,11 +16,14 @@ defineProps<{ screen: 'editor' | 'prompter' }>()
 
 const hints = {
   editor: [
-    { key: '↵ Enter', label: 'Add line' },
+    { key: '↵ Enter', label: 'Add / confirm line' },
     { key: 'Esc', label: 'Cancel edit' },
+    { key: 'Ctrl + ↵', label: 'Start prompter' },
   ],
   prompter: [
     { key: 'Space', label: 'Play / Pause' },
+    { key: 'M', label: 'Toggle mirror' },
+    { key: 'R', label: 'Reset to top' },
     { key: 'Esc', label: 'Back to editor' },
   ],
 }

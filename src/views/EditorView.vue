@@ -12,8 +12,22 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted, onUnmounted } from 'vue'
+import { useRouter } from 'vue-router'
 import EntryUnit from '../components/EntryUnit.vue'
 import ControlUnit from '../components/ControlUnit.vue'
+
+const router = useRouter()
+
+function onKeyDown(e: KeyboardEvent) {
+  if (e.key === 'Enter' && e.ctrlKey) {
+    e.preventDefault()
+    router.push('/prompter')
+  }
+}
+
+onMounted(() => window.addEventListener('keydown', onKeyDown, { capture: true }))
+onUnmounted(() => window.removeEventListener('keydown', onKeyDown, { capture: true }))
 </script>
 
 <style scoped>

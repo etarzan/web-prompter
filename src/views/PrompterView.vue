@@ -13,7 +13,7 @@
         transform: store.mirrorMode ? 'scaleX(-1)' : 'none',
       }"
     >
-      <div class="scroll-content" ref="contentEl">
+      <div class="scroll-content" ref="contentEl" :style="{ textShadow: textShadow }">
         <!-- Leading spacer so text starts off-screen -->
         <div class="spacer-top" />
         <p v-for="(line, i) in store.lines" :key="i" class="prompt-line">{{ line }}</p>
@@ -76,6 +76,22 @@ const pxPerMs = computed(() => {
   return (store.scrollSpeed * lineHeight) / 1000
 })
 
+function hexLuminance(hex: string): number {
+  const r = parseInt(hex.slice(1, 3), 16) / 255
+  const g = parseInt(hex.slice(3, 5), 16) / 255
+  const b = parseInt(hex.slice(5, 7), 16) / 255
+  const lin = (c: number) => c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4)
+  return 0.2126 * lin(r) + 0.7152 * lin(g) + 0.0722 * lin(b)
+}
+
+// When background is light, add a dark text shadow so any text color stays readable
+const textShadow = computed(() => {
+  const lum = hexLuminance(store.backColor)
+  return lum > 0.35
+    ? '0 1px 4px rgba(0,0,0,0.55), 0 0 2px rgba(0,0,0,0.30)'
+    : '0 1px 6px rgba(0,0,0,0.25)'
+})
+
 function scroll(ts: number) {
   if (!wrapperEl.value) return
   if (lastTs !== 0) {
@@ -112,6 +128,17 @@ function onKeyDown(e: KeyboardEvent) {
   }
   if (e.key === 'Escape') {
     router.push('/')
+  }
+  if (e.key === 'm' || e.key === 'M') {
+    store.toggleMirror()
+  }
+  if (e.key === 'r' || e.key === 'R') {
+    if (wrapperEl.value) wrapperEl.value.scrollTop = 0
+    if (playing.value) {
+      cancelAnimationFrame(rafId)
+      playing.value = false
+      lastTs = 0
+    }
   }
 }
 

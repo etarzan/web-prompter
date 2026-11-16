@@ -63,7 +63,7 @@ function submit() {
 }
 
 function onKeyDown(e: KeyboardEvent) {
-  if (e.key === 'Enter') submit()
+  if (e.key === 'Enter' && !e.ctrlKey) submit()
   if (e.key === 'Escape') {
     editIndex.value = null
     draft.value = ''
