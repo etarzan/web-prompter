@@ -148,6 +148,7 @@ function remove(i: number) {
 .entry-footer {
   padding: 8px;
   flex-shrink: 0;
+  background: var(--panel-inner-bg);
 }
 
 .input-area {
