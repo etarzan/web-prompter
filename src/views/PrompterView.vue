@@ -35,10 +35,15 @@
       <span class="material-icons">{{ playing ? 'pause_circle_filled' : 'play_circle_filled' }}</span>
     </button>
 
-    <!-- Mirror indicator -->
-    <div v-if="store.mirrorMode" class="mirror-badge">
-      <span class="material-icons">flip</span> Mirror
-    </div>
+    <!-- Mirror toggle -->
+    <button
+      class="overlay-btn mirror-toggle"
+      :class="{ 'mirror-toggle--active': store.mirrorMode }"
+      title="Toggle mirror mode"
+      @click.stop="store.toggleMirror()"
+    >
+      <span class="material-icons">flip</span>
+    </button>
 
     <!-- Keyboard hints -->
     <KeyboardHints screen="prompter" />
@@ -179,23 +184,12 @@ onUnmounted(() => {
 .play-btn { bottom: 20px; right: 20px; width: 56px; height: 56px; }
 .play-btn .material-icons { font-size: 36px; }
 
-/* ── Mirror badge ───────────────────────────────────────── */
-.mirror-badge {
-  position: fixed;
-  top: 16px;
-  right: 16px;
-  background: rgba(0,0,0,0.5);
-  color: rgba(255,255,255,0.75);
-  border-radius: 20px;
-  padding: 4px 12px;
-  font-size: 0.75rem;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  z-index: 10;
+.mirror-toggle { top: 16px; right: 16px; }
+.mirror-toggle--active {
+  background: rgba(156, 68, 204, 0.70);
+  color: #fff;
+  box-shadow: 0 0 10px rgba(255, 208, 74, 0.30);
 }
-
-.mirror-badge .material-icons { font-size: 14px; }
 
 /* ── Empty state ────────────────────────────────────────── */
 .empty-overlay {
