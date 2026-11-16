@@ -1,0 +1,91 @@
+/* ── Design tokens ──────────────────────────────────────── */
+:root {
+  --font-body: 'Roboto', 'Helvetica Neue', sans-serif;
+  --font-display: 'Sedgwick Ave', cursive;
+
+  /* Purple panel wash */
+  --panel-bg: rgba(164, 11, 235, 0.158);
+  --panel-inner-bg: rgba(164, 11, 235, 0.10);
+
+  /* Input pill */
+  --input-bg: rgba(255, 255, 255, 0.68);
+  --input-border-top: rgba(184, 179, 187, 0.4);
+  --input-border-left: rgb(209, 203, 212);
+  --input-border-right: rgba(213, 191, 223, 0.71);
+  --input-border-bottom: rgba(204, 197, 207, 1);
+  --input-gradient: linear-gradient(to right, rgba(207, 197, 212, 0.38), rgba(204, 197, 207, 1));
+
+  /* Icon / action colours */
+  --icon-muted: rgba(161, 133, 187, 0.94);
+  --icon-action: rgb(70, 38, 71);
+
+  /* Scrollbar */
+  --scrollbar-track-border: rgba(90, 4, 77, 0.51);
+  --scrollbar-thumb: linear-gradient(to right, rgba(80, 22, 76, 0.80), rgba(51, 2, 44, 0.61));
+  --scrollbar-thumb-hover: linear-gradient(to left, rgba(80, 22, 76, 0.80), rgba(51, 2, 44, 0.61));
+  --scrollbar-bg: rgba(119, 93, 122, 0.16);
+
+  /* Card */
+  --card-bg: rgba(119, 93, 122, 0.16);
+  --card-text: rgba(252, 250, 244, 0.82);
+  --card-shadow: 1px 2px rgba(41, 30, 46, 0.43);
+
+  /* Navbar */
+  --navbar-bg: #6200ea;
+  --navbar-text: #fff;
+
+  /* Prompter text/bg preset swatches */
+  --swatch-text-offwhite: #faeefd;
+  --swatch-text-blue: #0900ee;
+  --swatch-text-red: #660404;
+  --swatch-text-gray: #1f1e1e;
+
+  --swatch-back-lavender: #d4d0e6;
+  --swatch-back-blue: #98b8ff;
+  --swatch-back-red: #7e3131;
+  --swatch-back-dark: #302d2d;
+
+  /* Misc */
+  --radius-pill: 20px;
+  --radius-round: 50%;
+  --elevation-1: 0 1px 3px rgba(0,0,0,.2);
+  --elevation-5: 0 3px 10px rgba(0,0,0,.3);
+  --elevation-12: 0 6px 20px rgba(0,0,0,.4);
+}
+
+/* ── Reset / base ───────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: var(--font-body);
+  background: #1a1025;
+  color: #f0ebf5;
+}
+
+#app {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Utility classes ────────────────────────────────────── */
+.material-icons { vertical-align: middle; cursor: pointer; user-select: none; }
+.icon-action { color: var(--icon-action); }
+.icon-muted  { color: var(--icon-muted); }
+
+/* ── Custom scrollbar (webkit) ──────────────────────────── */
+.custom-scroll::-webkit-scrollbar { width: 10px; background: var(--scrollbar-bg); }
+.custom-scroll::-webkit-scrollbar-track {
+  border-radius: 15px;
+  background: transparent;
+  border: 1px solid var(--scrollbar-track-border);
+}
+.custom-scroll::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: var(--scrollbar-thumb);
+  border: 1px solid rgba(51, 2, 44, 0.61);
+}
+.custom-scroll::-webkit-scrollbar-thumb:hover { background: var(--scrollbar-thumb-hover); }
