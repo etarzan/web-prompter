@@ -8,14 +8,12 @@
         <ControlUnit />
       </div>
     </div>
-    <KeyboardHints screen="editor" />
   </div>
 </template>
 
 <script setup lang="ts">
 import EntryUnit from '../components/EntryUnit.vue'
 import ControlUnit from '../components/ControlUnit.vue'
-import KeyboardHints from '../components/KeyboardHints.vue'
 </script>
 
 <style scoped>

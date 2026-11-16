@@ -106,11 +106,17 @@
       </div>
     </div>
 
+    <hr class="divider" />
+
+    <h3 class="section-header">Keyboard Shortcuts</h3>
+    <KeyboardHints screen="editor" />
+
   </div>
 </template>
 
 <script setup lang="ts">
 import { usePrompterStore } from '../stores/prompter'
+import KeyboardHints from './KeyboardHints.vue'
 
 const store = usePrompterStore()
 

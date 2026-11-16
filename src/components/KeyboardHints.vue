@@ -27,59 +27,60 @@ const hints = {
 </script>
 
 <style scoped>
-.hints {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-/* Editor: sits in a strip above the fixed footer */
+/* ── Editor variant: inline block at bottom of tools panel ── */
 .hints--editor {
-  position: fixed;
-  bottom: 56px;
-  left: 0;
-  right: 0;
-  padding: 4px 14px;
-  background: rgba(7, 4, 15, 0.70);
-  border-top: 1px solid var(--hint-border);
-  backdrop-filter: blur(6px);
-  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 4px;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--hint-border);
+  border-radius: 8px;
 }
 
-/* Prompter: floating bottom-left, away from play button */
+/* ── Prompter variant: cool corner badge, bottom-left ─────── */
 .hints--prompter {
   position: fixed;
   bottom: 20px;
   left: 16px;
-  padding: 6px 10px;
-  background: rgba(7, 4, 15, 0.55);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px 12px;
+  background: rgba(7, 4, 15, 0.60);
   border: 1px solid var(--hint-border);
-  border-radius: 10px;
-  backdrop-filter: blur(6px);
+  border-left: 3px solid rgba(255, 208, 74, 0.55);
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
   z-index: 10;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.5), 0 0 12px rgba(255, 208, 74, 0.08);
 }
 
+/* ── Shared chip ─────────────────────────────────────────── */
 .hint-chip {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
   font-size: 0.72rem;
   color: var(--hint-text);
 }
 
 .hint-key {
   font-family: var(--font-body);
-  font-size: 0.70rem;
+  font-size: 0.68rem;
   background: var(--hint-key-bg);
-  border: 1px solid rgba(190, 130, 255, 0.30);
+  border: 1px solid rgba(190, 130, 255, 0.35);
+  border-bottom-width: 2px;
   border-radius: 4px;
-  padding: 1px 5px;
-  color: rgba(230, 200, 255, 0.90);
+  padding: 1px 6px;
+  color: rgba(240, 215, 255, 0.95);
   white-space: nowrap;
+  min-width: 28px;
+  text-align: center;
 }
 
 .hint-label {
-  opacity: 0.80;
+  opacity: 0.75;
 }
 </style>
