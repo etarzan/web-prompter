@@ -25,7 +25,6 @@
           v-model="draft"
           class="input-text"
           placeholder="Type lines here. Press Enter for a new line."
-          @keypress="onKeyPress"
           @keydown="onKeyDown"
         />
         <span class="material-icons icon-action input-submit-btn" @click="submit" title="Add line">
@@ -63,11 +62,8 @@ function submit() {
   draft.value = ''
 }
 
-function onKeyPress(e: KeyboardEvent) {
-  if (e.key === 'Enter') submit()
-}
-
 function onKeyDown(e: KeyboardEvent) {
+  if (e.key === 'Enter') submit()
   if (e.key === 'Escape') {
     editIndex.value = null
     draft.value = ''

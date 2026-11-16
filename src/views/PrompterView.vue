@@ -53,21 +53,21 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, computed } from 'vue'
+import { useRouter } from 'vue-router'
 import { usePrompterStore } from '../stores/prompter'
 import KeyboardHints from '../components/KeyboardHints.vue'
 
 const store = usePrompterStore()
+const router = useRouter()
 
 const wrapperEl = ref<HTMLDivElement | null>(null)
-const contentEl = ref<HTMLDivElement | null>(null)
 const playing = ref(false)
 
 let rafId = 0
 let lastTs = 0
 
-// pixels per millisecond derived from scroll speed (lines/sec) and font size
 const pxPerMs = computed(() => {
-  const lineHeight = store.fontSize * 1.6 // approximate line height
+  const lineHeight = store.fontSize * 1.6
   return (store.scrollSpeed * lineHeight) / 1000
 })
 
@@ -76,7 +76,6 @@ function scroll(ts: number) {
   if (lastTs !== 0) {
     const delta = ts - lastTs
     wrapperEl.value.scrollTop += pxPerMs.value * delta
-    // stop at the end
     const { scrollTop, scrollHeight, clientHeight } = wrapperEl.value
     if (scrollTop + clientHeight >= scrollHeight) {
       playing.value = false
@@ -100,16 +99,20 @@ function togglePlay() {
   }
 }
 
+// capture:true so we fire BEFORE the scroll-wrapper consumes Space
 function onKeyDown(e: KeyboardEvent) {
   if (e.code === 'Space') {
     e.preventDefault()
     togglePlay()
   }
+  if (e.key === 'Escape') {
+    router.push('/')
+  }
 }
 
-onMounted(() => window.addEventListener('keydown', onKeyDown))
+onMounted(() => window.addEventListener('keydown', onKeyDown, { capture: true }))
 onUnmounted(() => {
-  window.removeEventListener('keydown', onKeyDown)
+  window.removeEventListener('keydown', onKeyDown, { capture: true })
   cancelAnimationFrame(rafId)
 })
 </script>

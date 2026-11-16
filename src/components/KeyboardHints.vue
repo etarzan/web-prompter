@@ -16,12 +16,12 @@ defineProps<{ screen: 'editor' | 'prompter' }>()
 
 const hints = {
   editor: [
-    { key: '↵', label: 'Add line' },
+    { key: '↵ Enter', label: 'Add line' },
     { key: 'Esc', label: 'Cancel edit' },
   ],
   prompter: [
     { key: 'Space', label: 'Play / Pause' },
-    { key: '←', label: 'Back to editor' },
+    { key: 'Esc', label: 'Back to editor' },
   ],
 }
 </script>
@@ -61,26 +61,29 @@ const hints = {
 .hint-chip {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-size: 0.72rem;
+  gap: 8px;
+  font-size: 0.95rem;
   color: var(--hint-text);
 }
 
 .hint-key {
   font-family: var(--font-body);
-  font-size: 0.68rem;
+  font-size: 0.88rem;
+  font-weight: 600;
   background: var(--hint-key-bg);
-  border: 1px solid rgba(190, 130, 255, 0.35);
-  border-bottom-width: 2px;
-  border-radius: 4px;
-  padding: 1px 6px;
-  color: rgba(240, 215, 255, 0.95);
+  border: 1px solid rgba(190, 130, 255, 0.40);
+  border-bottom: 3px solid rgba(190, 130, 255, 0.55);
+  border-radius: 6px;
+  padding: 3px 10px;
+  color: rgba(248, 230, 255, 0.98);
   white-space: nowrap;
-  min-width: 28px;
+  min-width: 36px;
   text-align: center;
+  letter-spacing: 0.02em;
 }
 
 .hint-label {
-  opacity: 0.75;
+  opacity: 0.80;
+  font-size: 0.90rem;
 }
 </style>
