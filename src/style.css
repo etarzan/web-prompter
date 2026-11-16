@@ -18,9 +18,10 @@
   --panel-inner-bg: rgba(255, 255, 255, 0.04);
 
   /* Input pill */
-  --input-bg: rgba(255, 255, 255, 0.92);
-  --input-text: #1a0a2e;
-  --input-placeholder: rgba(80, 50, 100, 0.55);
+  --input-bg: rgba(255, 255, 255, 0.10);
+  --input-border: rgba(190, 130, 255, 0.30);
+  --input-text: rgba(240, 220, 255, 0.95);
+  --input-placeholder: rgba(190, 160, 220, 0.45);
 
   /* Icon / action colours */
   --icon-muted: rgba(200, 170, 230, 0.90);

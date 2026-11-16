@@ -154,9 +154,10 @@ function remove(i: number) {
   display: flex;
   align-items: center;
   background: var(--input-bg);
+  border: 1px solid var(--input-border);
   border-radius: var(--radius-pill);
   padding: 4px 12px;
-  box-shadow: var(--elevation-5);
+  backdrop-filter: blur(8px);
   min-height: 42px;
 }
 
